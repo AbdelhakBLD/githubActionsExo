@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: repository
-        uses: actions/checkout@v3    
-      - name: setup qemu  
+        uses: actions/checkout@v3
+      - name: setup qemu
         uses: docker/setup-qemu-action@v1
       - name: setup docker
         uses: docker/setup-buildx-action@v1
@@ -22,4 +22,3 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/pyapp:latest
-
