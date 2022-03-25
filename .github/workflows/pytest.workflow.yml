@@ -9,14 +9,14 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.6'
-          architecture: 'x64'
+          python-version: "3.6"
+          architecture: "x64"
       - name: Install requirements
         uses: py-actions/py/dependency-install@v3
         with:
-          path:  "./requirements.txt"
+          path: "./requirements.txt"
       - name: Run tests
-      - run: pytest
+        run: pytest
       - name: Create issue if fail test
         if: ${{ failure() }}
         uses: dacbd/create-issue-action@main
